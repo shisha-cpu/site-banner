@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-image: url('img/desktop.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Предотвращаем прокрутку */
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            max-width: 100%;
+            max-height: 100%;
+            padding: 20px; /* Единообразные отступы по краям */
+            box-sizing: border-box;
+        }
+
+        .text-svg {
+            margin-right: 20px; /* Space between text and winbox */
+        }
+
+        .winbox-svg {
+
+        }
+
+        /* Планшетная версия */
+        @media screen and (max-width: 1024px) and (min-width: 769px) {
+            body {
+                background-image: url('img/desktop.svg'); /* Используем десктопный фон */
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .content {
+                max-width: 100%;
+                max-height: 100%;
+                padding: 20px;
+            }
+
+            .content img {
+                max-width: 100%;
+                height: auto;
+                max-height: 40vh; /* Ограничиваем высоту изображений */
+                width: auto; /* Позволяем изображениям масштабироваться */
+            }
+        }
+
+        /* Мобильная версия */
+        @media screen and (max-width: 768px) {
+            body {
+                background-image: url('img/mobile.svg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .content {
+                flex-direction: column;
+                gap: 20px; /* Расстояние между элементами */
+                max-width: 100%;
+                max-height: 100%;
+                padding: 20px;
+            }
+
+            .winbox-svg {
+                order: 1; /* WINBOX сверху */
+            }
+
+            .text-svg {
+                order: 2; /* Текст снизу */
+                margin-right: 0; /* Убираем отступ справа */
+            }
+
+            .text-svg img {
+                content: url('img/mobiletext.svg');
+            }
+
+            .winbox-svg img {
+                content: url('img/mobileWINBOX.svg');
+            }
+
+            /* Обеспечиваем максимальную адаптивность */
+            .content img {
+                max-width: 100%;
+                height: auto;
+                max-height: 25vh; /* Ограничиваем высоту изображений */
+                width: auto; /* Позволяем изображениям масштабироваться */
+            }
+
+            /* Предотвращаем выезд элементов за границы */
+            body {
+                min-height: 100vh;
+                overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
+                box-sizing: border-box;
+            }
+
+            .content {
+                max-width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="text-svg">
+            <img src="img/decstoptext.svg" alt="Decstop Text">
+        </div>
+        <div class="winbox-svg">
+            <img src="img/decstopWINBOX.svg" alt="Decstop WINBOX">
+        </div>
+    </div>
+</body>
+</html>
