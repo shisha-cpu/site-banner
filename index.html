@@ -11,6 +11,8 @@
             --safe-area-inset-left: env(safe-area-inset-left, 0px);
             --safe-area-inset-right: env(safe-area-inset-right, 0px);
         }
+        body { min-height: 100vh; }    /* fallback */
+body { min-height: 100dvh; }   /* iOS/современные: динамическая высота */
         body {
             margin: 0;
             padding: 0;
@@ -108,12 +110,12 @@
         @media screen and (max-width: 767px) {
             body {
                 background-image: url('img/mobile.svg');
-                background-size: cover;
+                /* background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
                   padding-left: max(20px, env(safe-area-inset-left));
                 padding-right: max(20px, env(safe-area-inset-right));
-                padding-bottom: max(20px, env(safe-area-inset-bottom));
+                padding-bottom: max(20px, env(safe-area-inset-bottom)); */
             }
 
             .content {
