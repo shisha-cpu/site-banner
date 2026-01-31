@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desktop Layout</title>
     <style>
+             :root {
+            --safe-area-inset-top: env(safe-area-inset-top, 0px);
+            --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+            --safe-area-inset-left: env(safe-area-inset-left, 0px);
+            --safe-area-inset-right: env(safe-area-inset-right, 0px);
+        }
         body {
             margin: 0;
             padding: 0;
@@ -37,6 +43,17 @@
         .winbox-svg {
 
         }
+                .content {
+                max-width: 60%;
+                max-height: 100%;
+                padding: 20px;
+            }
+
+            .content img {
+                max-width: 90%;
+                height: auto;
+                max-height: 40vh; /* Ограничиваем высоту изображений */
+            }
     @media screen and (max-width: 1720px) and (min-width: 1561px) {
             body {
                 background-image: url('img/desktop.svg'); /* Используем десктопный фон */
@@ -94,6 +111,9 @@
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
+                  padding-left: max(20px, env(safe-area-inset-left));
+                padding-right: max(20px, env(safe-area-inset-right));
+                padding-bottom: max(20px, env(safe-area-inset-bottom));
             }
 
             .content {
@@ -142,6 +162,7 @@
                 box-sizing: border-box;
             }
         }
+        
     </style>
 </head>
 <body>
