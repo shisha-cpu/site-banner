@@ -110,6 +110,8 @@ body { min-height: 100dvh; }   /* iOS/современные: динамичес
         @media screen and (max-width: 767px) {
             body {
                 background-image: url('img/mobile.svg');
+                min-height: 120vh !important; /* Увеличиваем высоту для создания небольшого скролла */
+                overflow-y: auto !important; /* Разрешаем вертикальный скролл на мобильных устройствах */
                 /* background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -153,8 +155,9 @@ body { min-height: 100dvh; }   /* iOS/современные: динамичес
 
             /* Предотвращаем выезд элементов за границы */
             body {
-                min-height: 100vh;
+                min-height: 120vh !important; /* Увеличиваем высоту для создания небольшого скролла */
                 overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
+                overflow-y: auto !important; /* Разрешаем вертикальный скролл на мобильных устройствах */
                 box-sizing: border-box;
             }
 
