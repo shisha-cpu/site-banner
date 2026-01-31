@@ -24,7 +24,7 @@
             align-items: center;
             position: relative;
             z-index: 1;
-            max-width: 100%;
+            max-width: 60%;
             max-height: 100%;
             padding: 20px; /* Единообразные отступы по краям */
             box-sizing: border-box;
@@ -36,6 +36,28 @@
 
         .winbox-svg {
 
+        }
+    @media screen and (max-width: 1720px) and (min-width: 1561px) {
+            body {
+                background-image: url('img/desktop.svg'); /* Используем десктопный фон */
+                background-size: contain; /* Показываем полное изображение без обрезки */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-color: #141419; /* Добавляем черный фон вместо белого */
+            }
+
+            .content {
+                max-width: 60%;
+                max-height: 100%;
+                padding: 20px;
+            }
+
+            .content img {
+                max-width: 90%;
+                height: auto;
+                max-height: 40vh; /* Ограничиваем высоту изображений */
+                width: auto; /* Позволяем изображениям масштабироваться */
+            }
         }
 
         /* Планшетная версия */
